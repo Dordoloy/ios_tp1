@@ -26,4 +26,14 @@ struct Movie {
         self.synopsis = synopsis
         self.poster = ""
     }
+    
+    init(poster: String, title: String, date: String, synopsis: String) {
+        self.title = title
+        self.subtitle = ""
+        self.releaseDate = date
+        self.duration = 0
+        self.categories = []
+        self.synopsis = synopsis
+        self.poster = poster
+    }
 }
