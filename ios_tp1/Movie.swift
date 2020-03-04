@@ -15,7 +15,7 @@ struct Movie {
     var duration: Int
     var categories: [String]
     var synopsis: String
-    var poster: String
+    var poster: String?
     
     init(title: String, subtitle: String, releaseDate: String, duration: Int, categories: [String], synopsis: String) {
         self.title = title
@@ -27,7 +27,7 @@ struct Movie {
         self.poster = ""
     }
     
-    init(poster: String, title: String, date: String, synopsis: String) {
+    init(poster: String?, title: String, date: String, synopsis: String) {
         self.title = title
         self.subtitle = ""
         self.releaseDate = date

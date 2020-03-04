@@ -28,15 +28,11 @@ class ListTableViewCell: UITableViewCell {
         
     }
     
-    func setCell(poster: UIImage, title: String, date: String, synopsis: String) {
+    func setCell(poster: UIImage?, title: String, date: String, synopsis: String) {
         self.iconImageView.image = poster
         self.titleLabel.text = title
         self.dateLabel.text = date
         self.synopsisLabel.text = synopsis
     }
-    
-    @IBAction func didOpenFilmView(sender: AnyObject) {
-        print("In")
-    }
-    
+
 }
