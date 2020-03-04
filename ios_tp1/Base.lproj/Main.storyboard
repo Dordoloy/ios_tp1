@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,25 +19,25 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="218"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gAb-3y-K4Z">
-                                <rect key="frame" x="10" y="282" width="394" height="52"/>
+                                <rect key="frame" x="10" y="282" width="394" height="51.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z92-Xf-woK">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="31.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="31.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lvR-Le-Ktw">
-                                        <rect key="frame" x="0.0" y="31.5" width="394" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="31.333333333333314" width="394" height="20.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="SubTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2Y-5R-uNs">
-                                                <rect key="frame" x="0.0" y="0.0" width="348" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="348" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkF-ef-aab">
-                                                <rect key="frame" x="358" y="0.0" width="36" height="20.5"/>
+                                                <rect key="frame" x="358" y="0.0" width="36" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
@@ -47,33 +47,30 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3g1-0y-b8h">
-                                <rect key="frame" x="10" y="342" width="394" height="20.5"/>
+                                <rect key="frame" x="10" y="341.66666666666669" width="394" height="20.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LE-If-rkD">
-                                        <rect key="frame" x="0.0" y="0.0" width="338" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="338" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8o-A9-vRP">
-                                        <rect key="frame" x="348" y="0.0" width="46" height="20.5"/>
+                                        <rect key="frame" x="348" y="0.0" width="46" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-2V-TfK">
-                                <rect key="frame" x="10" y="409" width="394" height="213"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">Lorsqu'Alita se réveille sans aucun souvenir de qui elle est, dans un futur qu'elle ne reconnaît pas, elle est accueillie par Ido, un médecin qui comprend que derrière ce corps de cyborg abandonné, se cache une jeune femme au passé extraordinaire. Ce n'est que lorsque les forces obscures et corrompues qui gèrent la ville d'Iron City se lancent à sa poursuite qu'Alita découvre la clé de son passé - elle a des capacités de combat uniques, que ceux qui détiennent le pouvoir veulent.</string>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Synopsis" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lC-ia-6Pb">
+                                <rect key="frame" x="10" y="383.66666666666669" width="394" height="19.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-Dq-e4l">
-                                <rect key="frame" x="10" y="630" width="394" height="30"/>
+                                <rect key="frame" x="10" y="411.33333333333331" width="394" height="30"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Bande Annonce">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -86,12 +83,14 @@
                         <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gAb-3y-K4Z" firstAttribute="top" secondItem="qR5-Ne-2oT" secondAttribute="bottom" constant="20" id="7ue-yt-viC"/>
+                            <constraint firstItem="4lC-ia-6Pb" firstAttribute="top" secondItem="3g1-0y-b8h" secondAttribute="bottom" constant="21.5" id="B4y-by-wHg"/>
                             <constraint firstItem="qR5-Ne-2oT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ei6-rN-iYA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4lC-ia-6Pb" secondAttribute="trailing" constant="10" id="GSK-sZ-wqk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gAb-3y-K4Z" secondAttribute="trailing" constant="10" id="Nj3-Wk-jaX"/>
+                            <constraint firstItem="SEG-Dq-e4l" firstAttribute="top" secondItem="4lC-ia-6Pb" secondAttribute="bottom" constant="8.5" id="OO1-Ca-6NA"/>
                             <constraint firstItem="3g1-0y-b8h" firstAttribute="top" secondItem="gAb-3y-K4Z" secondAttribute="bottom" constant="8" id="WoK-pQ-pUB"/>
                             <constraint firstItem="gAb-3y-K4Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="c4h-jY-Dwc"/>
                             <constraint firstItem="qR5-Ne-2oT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dcr-aR-3IS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SEG-Dq-e4l" secondAttribute="bottom" constant="202" id="mxH-PF-tXg"/>
                             <constraint firstItem="3g1-0y-b8h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="psV-aN-CZd"/>
                             <constraint firstItem="SEG-Dq-e4l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="sTK-y5-3bU"/>
                             <constraint firstItem="qR5-Ne-2oT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sUx-VA-O9a"/>
@@ -99,6 +98,7 @@
                             <constraint firstItem="qR5-Ne-2oT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wgy-Iz-6W7"/>
                             <constraint firstAttribute="trailing" secondItem="3g1-0y-b8h" secondAttribute="trailing" constant="10" id="xtG-Ku-r2s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qR5-Ne-2oT" secondAttribute="bottom" constant="600" id="yJX-e0-qYe"/>
+                            <constraint firstItem="4lC-ia-6Pb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="zm2-OW-IzJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -107,7 +107,7 @@
                         <outlet property="categorieLabel" destination="5LE-If-rkD" id="Jv5-3d-7iB"/>
                         <outlet property="dateLabel" destination="hkF-ef-aab" id="6EG-1N-Luh"/>
                         <outlet property="subTitleLabel" destination="V2Y-5R-uNs" id="2ER-u0-WNh"/>
-                        <outlet property="synopsisTextView" destination="1vU-2V-TfK" id="WFT-JA-fvd"/>
+                        <outlet property="synopsisLabel" destination="4lC-ia-6Pb" id="qFC-sk-35s"/>
                         <outlet property="timeLabel" destination="g8o-A9-vRP" id="RzU-i8-bcp"/>
                         <outlet property="titleLabel" destination="Z92-Xf-woK" id="ys7-xa-fCi"/>
                         <outlet property="trailerButton" destination="SEG-Dq-e4l" id="zuF-br-xb8"/>

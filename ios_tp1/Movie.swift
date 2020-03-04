@@ -13,7 +13,7 @@ struct Movie {
     var subtitle: String
     var releaseDate: String
     var duration: Int
-    var categories: [String]?
+    var categories: [String]
     var synopsis: String
     var poster: String
     
@@ -26,15 +26,4 @@ struct Movie {
         self.synopsis = synopsis
         self.poster = ""
     }
-    
-    func getCategoriesAsString(categoriesParams: [String]?) -> String {
-          guard let categories = categoriesParams else {
-              return ""
-          }
-          var categoriesAsString = ""
-          categories.forEach { category in
-              categoriesAsString += category + ", "
-          }
-          return String(categoriesAsString.dropLast(2))
-       }
 }
