@@ -29,10 +29,20 @@ class ListTableViewCell: UITableViewCell {
     }
     
     func setCell(poster: UIImage?, title: String, date: String, synopsis: String) {
-        self.iconImageView.image = poster
+        print(poster)
+        self.iconImageView.imageFromServerURL(urlString: "https://image.tmdb.org/t/p/w500\(String(describing: poster))")
         self.titleLabel.text = title
         self.dateLabel.text = date
         self.synopsisLabel.text = synopsis
     }
 
 }
+extension UIImageView {
+public func imageFromServerURL(urlString: String) {
+    self.image = nil
+    URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
+        if error != nil { return }
+        DispatchQueue.main.async(execute: { () -> Void in self.image = UIImage(data: data!) })
+    }).resume()
+}}
+

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Movie {
+struct Movie: Decodable {
     var title: String
     var subtitle: String
     var releaseDate: String
@@ -35,5 +35,15 @@ struct Movie {
         self.categories = []
         self.synopsis = synopsis
         self.poster = poster
+    }
+    
+    init(from movieResponse: MovieResponse) {
+        self.poster = movieResponse.posterPath
+        self.title = movieResponse.title
+        self.subtitle = ""
+        self.releaseDate = movieResponse.releaseDate
+        self.synopsis = movieResponse.overview
+        self.categories = []
+        self.duration = 0
     }
 }
