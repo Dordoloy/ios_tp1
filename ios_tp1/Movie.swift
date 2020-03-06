@@ -9,6 +9,7 @@
 import Foundation
 
 struct Movie: Decodable {
+    var id: Int
     var title: String
     var subtitle: String
     var releaseDate: String
@@ -17,7 +18,8 @@ struct Movie: Decodable {
     var synopsis: String
     var poster: String?
     
-    init(title: String, subtitle: String, releaseDate: String, duration: Int, categories: [String], synopsis: String) {
+    init(id: Int, title: String, subtitle: String, releaseDate: String, duration: Int, categories: [String], synopsis: String) {
+        self.id = id
         self.title = title
         self.subtitle = subtitle
         self.releaseDate = releaseDate
@@ -27,23 +29,25 @@ struct Movie: Decodable {
         self.poster = ""
     }
     
-    init(poster: String?, title: String, date: String, synopsis: String) {
-        self.title = title
-        self.subtitle = ""
-        self.releaseDate = date
-        self.duration = 0
-        self.categories = []
-        self.synopsis = synopsis
-        self.poster = poster
-    }
-    
     init(from movieResponse: MovieResponse) {
+        self.id = movieResponse.id
         self.poster = movieResponse.posterPath
         self.title = movieResponse.title
-        self.subtitle = ""
+        self.subtitle = movieResponse.originalTitle
         self.releaseDate = movieResponse.releaseDate
         self.synopsis = movieResponse.overview
         self.categories = []
         self.duration = 0
+    }
+    
+    init(from detailsResponse: DetailsResponse) {
+        self.id = detailsResponse.id
+        self.poster = detailsResponse.backdropPath
+        self.title = detailsResponse.title
+        self.subtitle = detailsResponse.originalTitle
+        self.releaseDate = detailsResponse.releaseDate
+        self.synopsis = detailsResponse.overview
+        self.categories = detailsResponse.genres.map({genre -> String in genre.name})
+        self.duration = detailsResponse.runtime
     }
 }

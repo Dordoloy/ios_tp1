@@ -28,9 +28,8 @@ class ListTableViewCell: UITableViewCell {
         
     }
     
-    func setCell(poster: UIImage?, title: String, date: String, synopsis: String) {
-        print(poster)
-        self.iconImageView.imageFromServerURL(urlString: "https://image.tmdb.org/t/p/w500\(String(describing: poster))")
+    func setCell(poster: String?, title: String, date: String, synopsis: String) {
+        self.iconImageView.imageFromServerURL(urlString: "https://image.tmdb.org/t/p/w500\(poster!)")
         self.titleLabel.text = title
         self.dateLabel.text = date
         self.synopsisLabel.text = synopsis
@@ -38,7 +37,7 @@ class ListTableViewCell: UITableViewCell {
 
 }
 extension UIImageView {
-public func imageFromServerURL(urlString: String) {
+func imageFromServerURL(urlString: String) {
     self.image = nil
     URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
         if error != nil { return }

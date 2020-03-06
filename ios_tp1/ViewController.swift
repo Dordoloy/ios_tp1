@@ -15,24 +15,33 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var categorieLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var trailerButton: UIButton!
     
-    var movie: Movie = Movie(title: "Alita", subtitle: "Battle Angel", releaseDate: "14/02/2019", duration: 120, categories: ["Science Ficiton", "Action"], synopsis: "Lorsqu’Alita se réveille sans aucun souvenir de qui elle est, dans un futur qu’elle ne reconnaît pas, elle est accueillie par Ido, un médecin qui comprend que derrière ce corps de cyborg abandonné, se cache une jeune femme au passé extraordinaire. Ce n’est que lorsque les forces dangereuses et corrompues qui gèrent la ville d’Iron City se lancent à sa poursuite qu’Alita découvre la clé de son passé - elle a des capacités de combat uniques, que ceux qui détiennent le pouvoir veulent absolument maîtriser. Si elle réussit à leur échapper, elle pourrait sauver ses amis, sa famille, et le monde qu’elle a appris à aimer.")
+    var movie: Movie = Movie(id: 0, title: "", subtitle: "", releaseDate: "", duration: 0, categories: [], synopsis: "")
+    
+    var id: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = movie.title
-        subTitleLabel.text = movie.subtitle
-        dateLabel.text = movie.releaseDate
-        timeLabel.text = "\(String(movie.duration)) min"
-        categorieLabel.text = movie.categories.joined(separator: ", ")
-        synopsisLabel.text = movie.synopsis
+        let moviesRepository = MovieService()
+        moviesRepository.getMovieDetails(id: id, completionHandler: { response in
+            if let details = response {
+                self.movie = Movie(from: details)
+                DispatchQueue.main.async() {
+                    self.backgroundImage.imageFromServerURL(urlString: "https://image.tmdb.org/t/p/w500\(String(describing: self.movie.poster!))")
+                    self.titleLabel.text = self.movie.title
+                    self.dateLabel.text = self.movie.releaseDate
+                    self.timeLabel.text = "\(String(self.movie.duration)) min"
+                    self.categorieLabel.text = self.movie.categories.joined(separator: ", ")
+                    self.synopsisLabel.text = self.movie.synopsis
+                }
+            }
+        })
     }
     
     @IBAction func didOpenTrailer(sender: AnyObject) {

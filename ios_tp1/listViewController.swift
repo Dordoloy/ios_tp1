@@ -14,12 +14,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     let cellID:String = "ListTableViewCellID"
     
     var movies: [Movie] = []
-
+    let segueMovieListIdentifier = "listToDetail"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FilmService.instance.APIRequest { (movieListResponse) in
+        MovieService.instance.getMovies { (movieListResponse) in
             print("")
             
         }
@@ -30,8 +30,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let nib = UINib(nibName: "ListTableViewCell", bundle: nil)
         listTableView.register(nib, forCellReuseIdentifier: cellID)
         
-        let moviesRepository = FilmService()
-        moviesRepository.APIRequest() { response in
+        let moviesRepository = MovieService()
+        moviesRepository.getMovies() { response in
             if let movieList = response {
                 self.movies = movieList.transformToMovieArray()
                 DispatchQueue.main.async() {
@@ -53,7 +53,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let movie = movies[indexPath.item]
         
         if let moviePoster = movie.poster{
-            cell.setCell(poster: UIImage(named: moviePoster), title: movie.title, date: movie.releaseDate, synopsis: movie.synopsis)
+            cell.setCell(poster: moviePoster, title: movie.title, date: movie.releaseDate, synopsis: movie.synopsis)
         }
         else {
             cell.setCell(poster: nil, title: movie.title, date: movie.releaseDate, synopsis: movie.synopsis)
@@ -65,7 +65,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.item)
+        self.performSegue(withIdentifier: segueMovieListIdentifier, sender: movies[indexPath.item].id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueMovieListIdentifier {
+            let viewController = segue.destination as! ViewController
+            viewController.id = sender as! Int
+            //viewController.movie = sender as! Movie
+        }
     }
     
     //a chaque fois qu'une cell est display, transforme la cell d'une taille de 0.8 à la taille jusqu'à la taille d'origine en 0.4 secs

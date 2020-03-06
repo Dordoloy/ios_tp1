@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED1A6F3524113716003762B9 /* MovieListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A6F3424113716003762B9 /* MovieListResponse.swift */; };
-		ED1BE63A241108F800E059F2 /* FilmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1BE639241108F800E059F2 /* FilmService.swift */; };
+		ED1BE63A241108F800E059F2 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1BE639241108F800E059F2 /* MovieService.swift */; };
 		ED339848240E4FE9007A697F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED339847240E4FE9007A697F /* AppDelegate.swift */; };
 		ED33984A240E4FE9007A697F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED339849240E4FE9007A697F /* SceneDelegate.swift */; };
 		ED33984C240E4FE9007A697F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED33984B240E4FE9007A697F /* ViewController.swift */; };
@@ -21,6 +21,7 @@
 		EDABEA0B240FBC32008F1CE9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABEA0A240FBC32008F1CE9 /* ListViewController.swift */; };
 		EDABEA10240FD625008F1CE9 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABEA0E240FD625008F1CE9 /* ListTableViewCell.swift */; };
 		EDABEA11240FD625008F1CE9 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDABEA0F240FD625008F1CE9 /* ListTableViewCell.xib */; };
+		EDC4BA38241282470046D961 /* DetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4BA37241282470046D961 /* DetailsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		ED1A6F3424113716003762B9 /* MovieListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListResponse.swift; sourceTree = "<group>"; };
-		ED1BE639241108F800E059F2 /* FilmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmService.swift; sourceTree = "<group>"; };
+		ED1BE639241108F800E059F2 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		ED339844240E4FE9007A697F /* ios_tp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_tp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED339847240E4FE9007A697F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED339849240E4FE9007A697F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		EDABEA0A240FBC32008F1CE9 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		EDABEA0E240FD625008F1CE9 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		EDABEA0F240FD625008F1CE9 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		EDC4BA37241282470046D961 /* DetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +124,9 @@
 				EDABEA0A240FBC32008F1CE9 /* ListViewController.swift */,
 				EDABEA0E240FD625008F1CE9 /* ListTableViewCell.swift */,
 				EDABEA0F240FD625008F1CE9 /* ListTableViewCell.xib */,
-				ED1BE639241108F800E059F2 /* FilmService.swift */,
+				ED1BE639241108F800E059F2 /* MovieService.swift */,
 				ED1A6F3424113716003762B9 /* MovieListResponse.swift */,
+				EDC4BA37241282470046D961 /* DetailsResponse.swift */,
 			);
 			path = ios_tp1;
 			sourceTree = "<group>";
@@ -282,7 +285,8 @@
 				ED339848240E4FE9007A697F /* AppDelegate.swift in Sources */,
 				ED63A33B240EA0D7009F9B33 /* Movie.swift in Sources */,
 				EDABEA0B240FBC32008F1CE9 /* ListViewController.swift in Sources */,
-				ED1BE63A241108F800E059F2 /* FilmService.swift in Sources */,
+				ED1BE63A241108F800E059F2 /* MovieService.swift in Sources */,
+				EDC4BA38241282470046D961 /* DetailsResponse.swift in Sources */,
 				ED1A6F3524113716003762B9 /* MovieListResponse.swift in Sources */,
 				ED33984A240E4FE9007A697F /* SceneDelegate.swift in Sources */,
 				EDABEA10240FD625008F1CE9 /* ListTableViewCell.swift in Sources */,
