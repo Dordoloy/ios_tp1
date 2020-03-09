@@ -17,8 +17,9 @@ struct Movie: Decodable {
     var categories: [String]
     var synopsis: String
     var poster: String?
+    var videos: Result?
     
-    init(id: Int, title: String, subtitle: String, releaseDate: String, duration: Int, categories: [String], synopsis: String) {
+    init(id: Int, title: String, subtitle: String, releaseDate: String, duration: Int, categories: [String], synopsis: String, videos: Result?) {
         self.id = id
         self.title = title
         self.subtitle = subtitle
@@ -27,6 +28,7 @@ struct Movie: Decodable {
         self.categories = categories
         self.synopsis = synopsis
         self.poster = ""
+        
     }
     
     init(from movieResponse: MovieResponse) {
@@ -49,5 +51,6 @@ struct Movie: Decodable {
         self.synopsis = detailsResponse.overview
         self.categories = detailsResponse.genres.map({genre -> String in genre.name})
         self.duration = detailsResponse.runtime
+        self.videos = detailsResponse.videos.results[0]
     }
 }

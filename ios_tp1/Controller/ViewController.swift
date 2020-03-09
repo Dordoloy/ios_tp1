@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var trailerButton: UIButton!
     
-    var movie: Movie = Movie(id: 0, title: "", subtitle: "", releaseDate: "", duration: 0, categories: [], synopsis: "")
+    var movie: Movie = Movie(id: 0, title: "", subtitle: "", releaseDate: "", duration: 0, categories: [], synopsis: "", videos: nil)
     
     var id: Int = -1
     
@@ -45,7 +45,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didOpenTrailer(sender: AnyObject) {
-        if let url = URL(string: "https://www.youtube.com/watch?v=75QXYNz5Q8o") {
+        let video: String? = movie.videos?.key
+        if let url = URL(string: "https://www.youtube.com/watch?v=\(video!)") {
             UIApplication.shared.open(url)
         }
     }

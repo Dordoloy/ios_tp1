@@ -25,7 +25,7 @@ class MovieService {
         
         let requestAPI = URLSession.shared.dataTask(with: request as URLRequest) {data, response, error in
             guard error == nil else {
-                print(error!.localizedDescription) // On indique dans la console ou est le problème dans la requête
+                print(error!.localizedDescription) // We show in console where is the request problem
                 return
             }
             if let data = data {
@@ -39,13 +39,13 @@ class MovieService {
     }
     
     func getMovieDetails(id: Int, completionHandler: @escaping (DetailsResponse?) -> Void) {
-        let detailUrl = "https://api.themoviedb.org/3/movie/\(id)?api_key=a52d1043941e9207fc7c8b08ed0fef4e&language=en-US"
+        let detailUrl = "https://api.themoviedb.org/3/movie/\(id)?api_key=a52d1043941e9207fc7c8b08ed0fef4e&language=en-US&append_to_response=videos"
         print(detailUrl)
         let request = NSMutableURLRequest(url: URL(string: detailUrl)!)
         request.httpMethod = "GET"
         let requestAPI = URLSession.shared.dataTask(with: request as URLRequest) {data, response, error in
             guard error == nil else {
-                print(error!.localizedDescription) // On indique dans la console ou est le problème dans la requête
+                print(error!.localizedDescription) // We show in console where is the request problem
                 return
             }
             if let data = data {
