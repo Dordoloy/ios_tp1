@@ -32,28 +32,25 @@ struct Movie {
     }
     
     init(from movieResponse: MovieResponse) {
-        self.id = movieResponse.id
-        self.poster = movieResponse.posterPath
-        self.title = movieResponse.title
-        self.subtitle = movieResponse.originalTitle
-        self.releaseDate = movieResponse.releaseDate
-        self.synopsis = movieResponse.overview
+        self.id = movieResponse.id ?? 0
+        self.poster = movieResponse.posterPath ?? movieResponse.backdropPath ?? ""
+        self.title = movieResponse.title ?? "unknown title"
+        self.subtitle = movieResponse.originalTitle ?? movieResponse.title ?? "..."
+        self.releaseDate = movieResponse.releaseDate ?? "unknown realease date"
+        self.synopsis = movieResponse.overview ?? "unknown overview"
         self.categories = []
         self.duration = 0
     }
     
     init?(from detailsResponse: DetailsResponse) {
         self.id = detailsResponse.id
-        /*guard let poster = detailsResponse.backdropPath, let title = detailsResponse.backdropPath else {
-            return nil
-        }*/
-        self.poster = detailsResponse.backdropPath!
-        self.title = detailsResponse.title!
-        self.subtitle = detailsResponse.originalTitle!
-        self.releaseDate = detailsResponse.releaseDate!
-        self.synopsis = detailsResponse.overview!
-        self.categories = detailsResponse.genres.map({genre -> String in genre.name})
-        self.duration = detailsResponse.runtime!
-        self.videos = detailsResponse.videos!.results[0]
+        self.poster = detailsResponse.backdropPath ?? detailsResponse.posterPath ?? ""
+        self.title = detailsResponse.title ?? "unknown title"
+        self.subtitle = detailsResponse.originalTitle ?? "unknown subtitle"
+        self.releaseDate = detailsResponse.releaseDate ?? "unknown release date"
+        self.synopsis = detailsResponse.overview ?? "unknown overview"
+        self.categories = detailsResponse.genres.compactMap({genre -> String in genre.name})
+        self.duration = detailsResponse.runtime ?? 0
+        self.videos = detailsResponse.videos!.results.first
     }
 }

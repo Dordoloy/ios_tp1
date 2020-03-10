@@ -32,7 +32,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let movieList = response {
                 self.movies = movieList.transformToMovieArray()
                 DispatchQueue.main.async() {
-                    print(self.currentCatagory)
                     self.listTableView.reloadData()
                 }
             }
@@ -50,14 +49,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         let movie = movies[indexPath.item]
         
-        if let moviePoster: String = movie.poster{
-            cell.setCell(poster: moviePoster, title: movie.title, date: movie.releaseDate, synopsis: movie.synopsis)
-        }
-        else {
-            cell.setCell(poster: nil, title: movie.title, date: movie.releaseDate, synopsis: movie.synopsis)
-            
-        }
-        
+        cell.setCell(poster: movie.poster, title: movie.title, date: movie.releaseDate, synopsis: movie.synopsis)
     
       return cell
     }
@@ -73,7 +65,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    //a chaque fois qu'une cell est display, transforme la cell d'une taille de 0.8 à la taille jusqu'à la taille d'origine en 0.4 secs
+    //every time the cell is displayed, transoform the size of the cell from 0.8 to 1.0 in 0.4 secs
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         UIView.animate(withDuration: 0.4) {

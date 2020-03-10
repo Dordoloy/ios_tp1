@@ -45,10 +45,10 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func didOpenTrailer(sender: AnyObject) {
-        let video: String? = movie.videos?.key
-        if let url = URL(string: "https://www.youtube.com/watch?v=\(video!)") {
-            UIApplication.shared.open(url)
+        guard let video = movie.videos?.key, let url = URL(string: "https://www.youtube.com/watch?v=\(video)") else {
+            return
         }
+        UIApplication.shared.open(url)
     }
 
 }

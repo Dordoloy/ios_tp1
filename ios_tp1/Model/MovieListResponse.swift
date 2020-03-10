@@ -22,7 +22,7 @@ struct MovieListResponse: Codable {
     }
     
     func transformToMovieArray() -> [Movie] {
-        return self.results.map({ movieResponse -> Movie in
+        return self.results.compactMap({ movieResponse -> Movie in
             Movie(from: movieResponse)
         })
     }
@@ -30,17 +30,17 @@ struct MovieListResponse: Codable {
 
 // MARK: - MovieResponse
 struct MovieResponse: Codable {
-    let popularity: Double
-    let voteCount: Int
-    let video: Bool
-    let posterPath: String
-    let id: Int
-    let adult: Bool
-    let backdropPath, originalLanguage, originalTitle: String
-    let genreIDS: [Int]
-    let title: String
-    let voteAverage: Double
-    let overview, releaseDate: String
+    let popularity: Double?
+    let voteCount: Int?
+    let video: Bool?
+    let posterPath: String?
+    let id: Int?
+    let adult: Bool?
+    let backdropPath, originalLanguage, originalTitle: String?
+    let genreIDS: [Int]?
+    let title: String?
+    let voteAverage: Double?
+    let overview, releaseDate: String?
 
     enum CodingKeys: String, CodingKey {
         case popularity
