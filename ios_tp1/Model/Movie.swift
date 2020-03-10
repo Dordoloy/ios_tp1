@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Movie: Decodable {
+struct Movie {
     var id: Int
     var title: String
     var subtitle: String
@@ -16,7 +16,7 @@ struct Movie: Decodable {
     var duration: Int
     var categories: [String]
     var synopsis: String
-    var poster: String?
+    var poster: String
     var videos: Result?
     
     init(id: Int, title: String, subtitle: String, releaseDate: String, duration: Int, categories: [String], synopsis: String, videos: Result?) {
@@ -42,15 +42,18 @@ struct Movie: Decodable {
         self.duration = 0
     }
     
-    init(from detailsResponse: DetailsResponse) {
+    init?(from detailsResponse: DetailsResponse) {
         self.id = detailsResponse.id
-        self.poster = detailsResponse.backdropPath
-        self.title = detailsResponse.title
-        self.subtitle = detailsResponse.originalTitle
-        self.releaseDate = detailsResponse.releaseDate
-        self.synopsis = detailsResponse.overview
+        /*guard let poster = detailsResponse.backdropPath, let title = detailsResponse.backdropPath else {
+            return nil
+        }*/
+        self.poster = detailsResponse.backdropPath!
+        self.title = detailsResponse.title!
+        self.subtitle = detailsResponse.originalTitle!
+        self.releaseDate = detailsResponse.releaseDate!
+        self.synopsis = detailsResponse.overview!
         self.categories = detailsResponse.genres.map({genre -> String in genre.name})
-        self.duration = detailsResponse.runtime
-        self.videos = detailsResponse.videos.results[0]
+        self.duration = detailsResponse.runtime!
+        self.videos = detailsResponse.videos!.results[0]
     }
 }

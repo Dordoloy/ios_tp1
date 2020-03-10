@@ -15,14 +15,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var movies: [Movie] = []
     let segueMovieListIdentifier = "listToDetail"
+    var currentCatagory: Category = Category(id: -1, name: "category")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MovieService.instance.getMovies { (movieListResponse) in
-            print("")
-            
-        }
         
         self.listTableView.dataSource = self
         self.listTableView.delegate = self
@@ -31,10 +28,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         listTableView.register(nib, forCellReuseIdentifier: cellID)
         
         let moviesRepository = MovieService()
-        moviesRepository.getMovies() { response in
+        moviesRepository.getMovies(idCat: self.currentCatagory.id!) { response in
             if let movieList = response {
                 self.movies = movieList.transformToMovieArray()
                 DispatchQueue.main.async() {
+                    print(self.currentCatagory)
                     self.listTableView.reloadData()
                 }
             }
@@ -52,7 +50,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         let movie = movies[indexPath.item]
         
-        if let moviePoster = movie.poster{
+        if let moviePoster: String = movie.poster{
             cell.setCell(poster: moviePoster, title: movie.title, date: movie.releaseDate, synopsis: movie.synopsis)
         }
         else {
@@ -70,9 +68,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueMovieListIdentifier {
-            let viewController = segue.destination as! ViewController
+            let viewController = segue.destination as! DetailsViewController
             viewController.id = sender as! Int
-            //viewController.movie = sender as! Movie
         }
     }
     

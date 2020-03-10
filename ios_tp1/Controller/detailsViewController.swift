@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailsViewController.swift
 //  ios_tp1
 //
 //  Created by  on 03/03/2020.
@@ -9,7 +9,7 @@
 import UIKit
     
     
-class ViewController: UIViewController {
+class DetailsViewController: UIViewController {
 
 
     
@@ -31,9 +31,9 @@ class ViewController: UIViewController {
         let moviesRepository = MovieService()
         moviesRepository.getMovieDetails(id: id, completionHandler: { response in
             if let details = response {
-                self.movie = Movie(from: details)
+                self.movie = Movie(from: details)!
                 DispatchQueue.main.async() {
-                    self.backgroundImage.imageFromServerURL(urlString: "https://image.tmdb.org/t/p/w500\(String(describing: self.movie.poster!))")
+                    self.backgroundImage.imageFromServerURL(urlString: "https://image.tmdb.org/t/p/w500\(String(describing: self.movie.poster))")
                     self.titleLabel.text = self.movie.title
                     self.dateLabel.text = self.movie.releaseDate
                     self.timeLabel.text = "\(String(self.movie.duration)) min"

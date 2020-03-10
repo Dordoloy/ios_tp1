@@ -9,7 +9,7 @@
 import Foundation
 
 
-// MARK: - Welcome
+// MARK: - MovieListResponse
 struct MovieListResponse: Codable {
     let page, totalResults, totalPages: Int
     let results: [MovieResponse]
@@ -28,7 +28,7 @@ struct MovieListResponse: Codable {
     }
 }
 
-// MARK: - Result
+// MARK: - MovieResponse
 struct MovieResponse: Codable {
     let popularity: Double
     let voteCount: Int
